@@ -11,11 +11,33 @@ import android.widget.TextView;
  */
 
 public class UserInfoBuilder {
-    private String name;  //姓名 （必填，在初始化时，传入参数）
+    private final String name;  //姓名 （必填，在初始化时，传入参数）
     private String sex;  //性别
     private int age;      //年龄
     private double height; //身高CM
     private double weight; //体重KG
+
+  /*  private volatile static UserInfoBuilder mInstance;
+
+    public static UserInfoBuilder getInstance(String name)
+    {
+        if (mInstance == null)
+        {
+            synchronized (UserInfoBuilder.class)
+            {
+                if (mInstance == null)
+                {
+                    mInstance = new UserInfoBuilder(name);
+                }
+            }
+        }
+        return mInstance;
+    }*/
+
+    public static UserInfoBuilder getInstance(String name) {
+
+        return new UserInfoBuilder(name);
+    }
 
 
     public UserInfoBuilder(String name){

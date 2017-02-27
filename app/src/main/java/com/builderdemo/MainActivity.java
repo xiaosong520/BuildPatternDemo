@@ -43,13 +43,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void GetUserInfo() {
-        UserInfoBuilder builder = new UserInfoBuilder("小嵩");
-
-        UserInfo info = builder.setAge(23)
+       /* UserInfoBuilder builder = new UserInfoBuilder("小嵩");
+          UserInfo info = builder.setAge(23)
                 .setSex("男")
                 .setHeight(174)
                 .setWeight(62.5)
-                .create();//将数据传递给UserInfo 实体类
+                .create();//将数据传递给UserInfo 实体类*/
+
+        UserInfo info = UserInfoBuilder
+                            .getInstance("小芳")
+                            .setAge(20)
+                            .setSex("女")
+                            .setHeight(167)
+                            .setWeight(52)
+                            .into(tv_content)//显示到TextView中*/
+                            .create();
 
         Toast.makeText(this, info.toString(),Toast.LENGTH_SHORT).show();
 
@@ -57,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void showText() {
 
-        new UserInfoBuilder("小嵩")
+        UserInfoBuilder.getInstance("小嵩")
                 .setAge(23)
                 .setSex("男")
                 .setHeight(174)

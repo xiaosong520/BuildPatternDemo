@@ -16,6 +16,7 @@ public class UserInfo {
     private double height; //身高CM
     private double weight; //体重KG
 
+
     public UserInfo(String name, String sex, int age, double height, double weight) {
         this.name = name;
         this.sex = sex;
